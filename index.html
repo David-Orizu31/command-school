@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>JSS1 Intake and Transfer Cash and Carry</title>
+
+   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <script src="js/font-awesome.js"></script>
+
+</head>
+<body>
+        <main>
+            <div class="container-fluid">
+                <div class="title">
+                    <h3>JSS1 Intake and Transfer Cash and Carry</h3>
+                </div>
+            
+            <form action="" method="post">
+               <div class="form-area">
+                   <div class="row">
+                       <div class="col-sm-6">
+                           <div class="col-md-11">
+                          <div class="form-group">
+                              <label for="name" class="reg-label">Student's Name :</label>
+                              <input type="text" name="name" id="name" class="form-control" placeholder="Enter Student's Name" required>
+                          </div>
+            
+                          <div class="form-group">
+                            <label for="amount_paid" class="reg-label">Amount Paid :</label>
+                            <input type="text" name="amount_paid" id="amount_paid" class="form-control" placeholder="Enter Amount Paid" required>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="parental_status" class="reg-label">Parental Status :</label>
+                            <select name="parental_status" id="parental_status" class="form-select" required>
+                                <option value="" selected disabled>--- Select One ---</option>
+                                <option value="soldier">Soldier</option>
+                                <option value="officer">Officer</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="pta" class="reg-label">PTA :</label>
+                            <input type="text" name="pta" id="pta" class="form-control" placeholder="PTA" required>
+                        </div>
+            
+                        </div>
+                       </div>
+                       <div class="col-sm-6">
+            
+                         <div class="col-md-11">
+                            <div class="form-group">
+                                <label for="interhouse_sport" class="reg-label">Interhouse Sport :</label>
+                                <input type="text" name="interhouse_sport" id="interhouse_sport" class="form-control" placeholder="Interhouse Sport" required>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="exam_fee" class="reg-label">Examination Fee :</label>
+                                <select name="exam_fee" id="exam_fee" class="form-select" required>
+                                    <option value="" selected disabled>--- Select One ---</option>
+                                    <option value="waec/neco">WAEC/NECO</option>
+                                    <option value="junior bece">Junior BECE</option>
+                                    <option value="intercommand fee">Intercommand Fee</option>
+                                </select>
+                            </div>
+            
+                            <div class="form-group" id="waec">
+                                <label for="waecneco_amount" class="reg-label">WAEC/NECO Fee</label>
+                                <input type="text" name="waecneco_amount" id="waecneco_amount" class="form-control" placeholder="Enter WAEC/NECO Fee">
+                            </div>
+            
+                            <div class="form-group" id="bece">
+                                <label for="bece_amount" class="reg-label">Junior BECE Fee</label>
+                                <input type="text" name="bece_amount" id="bece_amount" class="form-control" placeholder="Enter Junior BECE Fee">
+                            </div>
+            
+                            <div class="form-group" id="interfee">
+                                <label for="intercommand_amount" class="reg-label">Intercommand Fee</label>
+                                <input type="text" name="intercommand_amount" id="intercommand_amount" class="form-control" placeholder="Enter Intercommand Fee">
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="barbing_plaiting" class="reg-label">Barbing/Plaiting :</label>
+                                <input type="text" name="barbing_plaiting" id="barbing_plaiting" class="form-control" placeholder="Barbing/Plaiting" required>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="remark" class="reg-label">Remark :</label>
+                                <input type="text" name="remark" id="remark" class="form-control" placeholder="Remark" required>
+                            </div>
+            
+                            <div class="form-group" align="right">
+                               <button class="btn btn-success" type="submit" id="submit">Submit</button>
+                            </div>
+                         </div>
+            
+                       </div>
+                   </div>
+               </div>
+            </form>
+            
+            <br>
+            
+            <div class="table-responsive">
+                <table id="example" class="table table-bordered">
+                    <thead class="bg-success text-white" id="div">
+                    <tr>
+                        <th>Student's Name</th>
+                        <th>Amount Paid</th>
+                        <th>Parental Status</th>
+                        <th>PTA</th>
+                        <th>Interhouse Sport</th>
+                        <th>Examination Fee</th>
+                        <th>WAEC/NECO Fee</th>
+                        <th>Junior BECE Fee</th>
+                        <th>InterCommand Fee</th>
+                        <th>Barbing/Plaiting</th>
+                        <th>Remark</th>
+                        <!-- <th>Actions</th> -->
+                    </tr>
+                    </thead>
+                    <tbody id="div2">
+                       <tr>
+                           <td>Adewole Jude</td>
+                           <td>₦ 60,000.00</td>
+                           <td>Soldier</td>
+                           <td>₦ 7,000.00</td>
+                           <td>₦ 8,000.00</td>
+                           <td>WAEC/NECO</td>
+                           <td>₦ 40,000.00</td>
+                           <td>₦ 0.00</td>
+                           <td>₦ 0.00</td>
+                           <td>₦ 5,000.00</td>
+                           <td>Paid</td>
+                           <!-- <td>
+                            <a href="javascript:void(0)" type="button" onclick="editStudent({{$studentfee->id}})" class="btn btn-success btn-sm">Edit</a>
+                            <a href="javascript:void(0)" type="button" onclick="deletefees({{$studentfee->id}})" class="btn btn-danger btn-sm">Delete</a>
+                        </td> -->
+                       </tr>
+                    </tbody>
+                </table>
+                <br>
+            </div>
+            
+            <br>
+            
+            
+            <script src="js/sweet-alert.js"></script>
+            <script src="js/jquery.min.js"></script>
+            <script src="js/jquery.validate.min.js"></script>
+            <script src="js/jquery.dataTables.min.js"></script>
+            <script src="js/dataTables.bootstrap5.min.js"></script>
+            
+            <script>
+                $(document).ready(function() {
+                 $('#example').DataTable();
+                });
+              </script>
+            
+              <script>
+                  $(document).ready(function() {
+                     $('#waec').hide();
+                     $('#bece').hide();
+                     $('#interfee').hide();
+            
+                     $('#exam_fee').on('change', function() {
+                        if ( this.value == 'waec/neco')
+                        {
+                            $('#waec').show();
+                            $('#bece').hide();
+                            $('#interfee').hide();
+                        }
+                        else if ( this.value == 'junior bece')
+                        {
+                            $('#waec').hide();
+                            $('#bece').show();
+                            $('#interfee').hide();
+                        }
+                        else if ( this.value == 'intercommand fee')
+                        {
+                            $('#waec').hide();
+                            $('#bece').hide();
+                            $('#interfee').show();
+                        }
+                     });
+            
+                     $('#waec2').hide();
+                        $('#bece2').hide();
+                        $('#interfee2').hide();
+            
+                     $('#exam_fee2').on('change', function() {
+                        if ( this.value == 'waec/neco')
+                        {
+                            $('#waec2').show();
+                            $('#bece2').hide();
+                            $('#interfee2').hide();
+                        }
+                        else if ( this.value == 'junior bece')
+                        {
+                            $('#waec2').hide();
+                            $('#bece2').show();
+                            $('#interfee2').hide();
+                        }
+                        else if ( this.value == 'intercommand fee')
+                        {
+                            $('#waec2').hide();
+                            $('#bece2').hide();
+                            $('#interfee2').show();
+                        }
+                     });
+                  });
+              </script>
+            
+            
+            <script type="text/javascript">
+                $(window).on('load', function (e) {
+                    $('#MyButton').on('click', function (e) {
+                        $("#div").load(" #div > *");
+                        $("#div2").load(" #div2 > *");
+                    });
+                });
+                </script>
+            
+            </div>
+        </main>
+
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

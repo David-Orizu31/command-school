@@ -1,0 +1,37 @@
+.title h3{
+  font-size: 20px;
+  padding: 10px 0px 0px 10px;
+  color: rgb(27, 139, 27);
+}
+
+.form-area {
+    background-color: rgb(214, 250, 216);
+    padding: 20px;
+}
+
+.form-control {
+    border-radius: 0px;
+}
+
+.form-select {
+    border-radius: 0px;
+}
+
+.form-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.reg-label {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.card-header span {
+    color: rgb(27, 139, 27);
+    font-weight: 500;
+}
+
+.card-body {
+    padding: 10px !important;
+}
